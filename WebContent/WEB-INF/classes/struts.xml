@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="demo1" extends="struts-default" namespace="/">
+	<action name="user_*" class="userAction" method="{1}">
+		<!-- <result name="loginsuccess">/index.jsp</result> -->
+		<result name="loginsuccess" type="redirectAction">story_indexlist</result>
+		<result name="login">/login.jsp</result>
+		<result name="registersuccess">/login.jsp</result>
+		<result name="usershow">/myinfo.jsp</result>
+		<result name="showUserinfo">/myinfoedit.jsp</result>
+		<result name="update" type="redirectAction">story_indexlist</result>
+	</action>
+	<action name="story_*" class="storyAction" method="{1}">
+		<result name="toAddPage">/newstory.jsp</result>
+		<result name="add" type="redirectAction">story_indexlist</result>
+		<result name="indexlist">/index.jsp</result>
+		<result name="storyshow">/storyshow.jsp</result>
+		<result name="getAllStory">/showbypage.jsp</result>
+	</action>
+	</package>
+</struts>

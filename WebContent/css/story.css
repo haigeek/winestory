@@ -1,0 +1,22 @@
+.topic-tab {
+    margin: 0 10px;
+    color: #1E2022;
+    text-decoration: none;
+}
+.top-tab {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+.a:hover{text-decoration:none;color: white;}
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: white;
+    border-color: #ddd;
+}
+
+.simditor .simditor-toolbar > ul {
+     margin: 10; 
+    padding: 0 0 0 6px;
+    list-style: none;
+}

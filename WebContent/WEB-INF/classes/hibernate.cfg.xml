@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	<hibernate-configuration>
+    <session-factory>
+        <!-- 配置hibernate信息 -->
+        <!-- 数据库使用的方言 （可选） -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- 设置 打印输出 sql 语句 为真 -->
+        <property name="show_sql">true</property>
+        <!-- 设置格式为 sql -->
+        <property name="format_sql">true</property>
+        <!-- 第一次加载 hibernate 时根据实体类自动建立表结构，以后自动更新表结构 -->
+        <property name="hbm2ddl.auto">update</property>
+        <!-- 将映射文件放进核心文件（必须） -->
+        <mapping resource="cn/haigeek/entity/User.hbm.xml"/>
+        <mapping resource="cn/haigeek/entity/Story.hbm.xml"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

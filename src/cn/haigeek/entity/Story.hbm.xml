@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.haigeek.entity.Story" table="t_story">
+		<id name="story_id" column="story_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="user_id" column="user_id"></property>
+		<property name="story_title" column="story_title"></property>
+		<property name="story_content" column="story_content"></property>
+		<property name="story_type" column="story_type"></property>
+		<property name="ts" column="ts"></property>
+		
+		<!-- story所属的用户 -->
+		<many-to-one name="user" class="cn.haigeek.entity.User" column="usid"  ></many-to-one>
+	</class>
+</hibernate-mapping> 
