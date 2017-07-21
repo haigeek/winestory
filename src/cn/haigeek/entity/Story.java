@@ -1,6 +1,6 @@
 package cn.haigeek.entity;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 public class Story {
 	private Integer story_id;
@@ -8,7 +8,7 @@ public class Story {
 	private String story_title;
 	private String story_content;
 	private String story_type;
-	private Timestamp ts;
+	private Date date;
 	//所属的用户
 	private User user;
 	public User getUser() {
@@ -47,10 +47,12 @@ public class Story {
 	public void setStory_type(String story_type) {
 		this.story_type = story_type;
 	}
-	public Timestamp getTs() {
-		return ts;
+
+	public Date getDate() {
+		return date;
 	}
-	public void setTs(Timestamp ts) {
-		this.ts = ts;
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }

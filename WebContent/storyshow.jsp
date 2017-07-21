@@ -27,6 +27,7 @@
 
                         <div class="mdui-card-primary-title">${storyshow.story_title}</div>
                         <div class="mdui-card-primary-subtitle">${storyshow.user.username}</div>
+                        <div class="mdui-card-primary-subtitle">${storyshow.date}</div>
                     </div>
                     <div class="mdui-card-content">
 

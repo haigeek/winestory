@@ -8,11 +8,14 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.ServletActionContext;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 	//模型驱动
+	Date date = new Date();
+
 	private Story story=new Story();
 	public Story getModel() {
 		return story;
@@ -33,6 +36,7 @@ public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 		 * uid是客户的id是不能直接封装的
 		 * 将uid封装到Story实体里面的user对象之中
 		 */
+		story.setDate(date);
 		storyService.add(story);
 		return "add";
 	}

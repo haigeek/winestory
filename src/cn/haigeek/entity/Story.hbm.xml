@@ -11,7 +11,7 @@
 		<property name="story_title" column="story_title"></property>
 		<property name="story_content" column="story_content"></property>
 		<property name="story_type" column="story_type"></property>
-		<property name="ts" column="ts"></property>
+		<property name="date" column="date"></property>
 		
 		<!-- story所属的用户 -->
 		<many-to-one name="user" class="cn.haigeek.entity.User" column="usid"  ></many-to-one>

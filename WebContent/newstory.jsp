@@ -29,7 +29,8 @@
                         <div class="mdui-card-header-title">发表新的主题</div>
                         <div class="mdui-card-header-subtitle"></div>
                         <input type="hidden" name="user.uid" value="${user.uid }" />
-                          
+
+
                     </div>
                     <div class="mdui-container">
 
