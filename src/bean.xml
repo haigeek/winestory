@@ -48,4 +48,5 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>  -->
 	<import resource="classpath:story.xml"/>
+	<import resource="classpath:comment.xml"/>
 </beans>

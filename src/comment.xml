@@ -11,15 +11,13 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
         
         > <!-- bean definitions here -->
-	<bean id="storyAction" class="cn.haigeek.action.StoryAction" scope="prototype">
-		<property name="storyService" ref="storyService"></property>
+	<bean id="commentAction" class="cn.haigeek.action.CommentAction" scope="prototype">
 		<property name="commentService" ref="commentService"></property>
 	</bean>
-	<bean id="storyService" class="cn.haigeek.service.StoryService">
-		<property name="storyDao" ref="storyDaoImpl"></property>
+	<bean id="commentService" class="cn.haigeek.service.CommentService">
+		<property name="commentDao" ref="commentDaoImpl"></property>
 	</bean>
-	<bean id="storyDaoImpl" class="cn.haigeek.dao.StoryDaoImpl">
+	<bean id="commentDaoImpl" class="cn.haigeek.dao.CommentDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-
 </beans>

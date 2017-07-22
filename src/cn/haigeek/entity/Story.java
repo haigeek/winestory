@@ -1,6 +1,8 @@
 package cn.haigeek.entity;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Story {
 	private Integer story_id;
@@ -11,6 +13,8 @@ public class Story {
 	private Date date;
 	//所属的用户
 	private User user;
+
+	private Set<Comment> setComment=new HashSet<Comment>();
 	public User getUser() {
 		return user;
 	}
@@ -54,5 +58,13 @@ public class Story {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public Set<Comment> getSetComment() {
+		return setComment;
+	}
+
+	public void setSetComment(Set<Comment> setComment) {
+		this.setComment = setComment;
 	}
 }

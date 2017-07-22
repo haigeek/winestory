@@ -16,6 +16,7 @@
         <!-- 将映射文件放进核心文件（必须） -->
         <mapping resource="cn/haigeek/entity/User.hbm.xml"/>
         <mapping resource="cn/haigeek/entity/Story.hbm.xml"/>
+        <mapping resource="cn/haigeek/entity/Comment.hbm.xml"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

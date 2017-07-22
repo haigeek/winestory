@@ -1,5 +1,6 @@
 package cn.haigeek.entity;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,10 +14,12 @@ public class User {
 	private String weibo;
 	private String music;
 	private String website;
+	private Date joindate;
 	
 	
 	//表示所有的story
 	private Set<Story> setStory=new HashSet<Story>();
+	private Set<Comment> setComment=new HashSet<Comment>();
 	
 	
 	public Set<Story> getSetStory() {
@@ -78,5 +81,21 @@ public class User {
 	}
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+
+	public Date getJoindate() {
+		return joindate;
+	}
+
+	public void setJoindate(Date joindate) {
+		this.joindate = joindate;
+	}
+
+	public Set<Comment> getSetComment() {
+		return setComment;
+	}
+
+	public void setSetComment(Set<Comment> setComment) {
+		this.setComment = setComment;
 	}
 }

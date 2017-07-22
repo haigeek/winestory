@@ -43,6 +43,7 @@ public class StoryService {
     public int findStorySize(){
         return storyDao.findStorySize();
     }
+
 //
 
 }

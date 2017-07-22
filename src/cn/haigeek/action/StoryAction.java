@@ -1,7 +1,9 @@
 package cn.haigeek.action;
 
+import cn.haigeek.entity.Comment;
 import cn.haigeek.entity.Story;
 import cn.haigeek.entity.pageShow;
+import cn.haigeek.service.CommentService;
 import cn.haigeek.service.StoryService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -17,14 +19,19 @@ public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 	Date date = new Date();
 
 	private Story story=new Story();
+	private Comment comment=new Comment();
 	public Story getModel() {
 		return story;
 	}
 	private StoryService storyService;
-
     public void setStoryService(StoryService storyService) {
 		this.storyService = storyService;
 	}
+	private CommentService commentService;
+	public void setCommentService(CommentService commentService) {
+		this.commentService = commentService;
+	}
+
 	//到发布界面
 	public String toAddPage(){
 		return "toAddPage";
@@ -40,6 +47,7 @@ public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 		storyService.add(story);
 		return "add";
 	}
+
 	//首页文章列表
 	public String indexlist(){
 		List<Story> indexlist=storyService.findindex();
@@ -53,6 +61,9 @@ public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 		int story_id=story.getStory_id();
 		Story storyshow=storyService.findOne(story_id);
 		ServletActionContext.getRequest().setAttribute("storyshow", storyshow);
+		int storyId=story.getStory_id();
+		List<Comment> commentshow= commentService.findOne(storyId);
+		ServletActionContext.getRequest().setAttribute("commentshow", commentshow);
 		return "storyshow";
 	
 	}

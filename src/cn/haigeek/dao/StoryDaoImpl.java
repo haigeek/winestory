@@ -2,6 +2,7 @@ package cn.haigeek.dao;
 
 import java.util.List;
 
+import cn.haigeek.entity.Comment;
 import cn.haigeek.entity.User;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
@@ -60,6 +61,7 @@ public class StoryDaoImpl extends HibernateDaoSupport implements StoryDao {
         return StoryList;
 
     }
+
 
 
 }

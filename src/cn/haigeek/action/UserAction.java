@@ -1,19 +1,15 @@
 package cn.haigeek.action;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.ServletActionContext;
-
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
-
 import cn.haigeek.entity.Story;
 import cn.haigeek.entity.User;
 import cn.haigeek.service.StoryService;
 import cn.haigeek.service.UserService;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 public class UserAction extends ActionSupport implements ModelDriven<User>{
 	private StoryService storyService;
@@ -43,7 +39,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 			return "login";
 		}	
 	}
-	//
+	//注销的方法
+
 	//注册
 	public String register() {
 		userService.register(user);

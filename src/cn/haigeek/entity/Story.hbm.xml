@@ -12,7 +12,11 @@
 		<property name="story_content" column="story_content"></property>
 		<property name="story_type" column="story_type"></property>
 		<property name="date" column="date"></property>
-		
+
+		<set name="setComment">
+			<key column="storyId"></key>
+			<one-to-many class="cn.haigeek.entity.Comment"/>
+		</set>
 		<!-- story所属的用户 -->
 		<many-to-one name="user" class="cn.haigeek.entity.User" column="usid"  ></many-to-one>
 	</class>

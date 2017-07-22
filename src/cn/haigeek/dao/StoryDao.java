@@ -18,4 +18,5 @@ public interface StoryDao {
     int findStorySize();
 
     List <Story>getAllStory(int page, int pageSize);
+
 }

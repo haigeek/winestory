@@ -16,51 +16,75 @@
 <%@include file="bootstrapTop.jsp" %>
 <br>
 <main>
-<div class="mdui-container-fluid">
-    <div class="mdui-class">
-        <div class="mdui-row">
-            <div class="mdui-col-xs-12 mdui-col-sm-3"></div>
-            <div class="mdui-col-xs-12 mdui-col-sm-5">
+    <div class="mdui-container-fluid">
+        <div class="mdui-class">
+            <div class="mdui-row">
+                <div class="mdui-col-xs-12 mdui-col-sm-3"></div>
+                <div class="mdui-col-xs-12 mdui-col-sm-5">
 
-                <div class="panel panel-default">
-                    <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
 
-                        <div class="mdui-card-primary-title">${storyshow.story_title}</div>
-                        <div class="mdui-card-primary-subtitle">${storyshow.user.username}</div>
-                        <div class="mdui-card-primary-subtitle">${storyshow.date}</div>
-                    </div>
-                    <div class="mdui-card-content">
-
-                        ${storyshow.story_content}
-
-
-                    </div>
-                </div>
-            </div>
-            <div class="mdui-col-xs-12 mdui-col-sm-2">
-            </div>
-        </div>
-    </div>
-    <div class="mdui-class">
-        <div class="mdui-row">
-            <div class="mdui-col-xs-12 mdui-col-sm-3"></div>
-            <div class="mdui-col-xs-12 mdui-col-sm-5">
-                <div class="panel panel-default">
-                    <div class="panel-heading">评论</div>
-                    <div class="panel-body">
-                        <p>发表一条回复</p>
-                        <div class="mdui-textfield">
-                            <textarea class="mdui-textfield-input" placeholder="说点什么"></textarea>
+                            <div class="mdui-card-primary-title">${storyshow.story_title}</div>
+                            <div class="mdui-card-primary-subtitle">${storyshow.user.username}</div>
+                            <div class="mdui-card-primary-subtitle">${storyshow.date}</div>
                         </div>
-                        <button class="mdui-btn mdui-color-blue  mdui-float-right mdui-btn-dense">回复</button>
-                    </div>
+                        <div class="mdui-card-content">
 
+                            ${storyshow.story_content}
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-col-xs-12 mdui-col-sm-2">
                 </div>
             </div>
-            <div class="mdui-col-xs-12 mdui-col-sm-2"></div>
+        </div>
+        <div class="mdui-class">
+            <div class="mdui-row">
+                <div class="mdui-col-xs-12 mdui-col-sm-3"></div>
+                <div class="mdui-col-xs-12 mdui-col-sm-5">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">评论</div>
+                        <div class="panel-body">
+                            <c:forEach items="${commentshow }" var="comment">
+                            <ul class="mdui-list mdui-list-dense">
+                                    <li class="mdui-list-item ">
+                                        <div class="mdui-list-item-avatar"><img src="avatar1.jpg"/></div>
+                                        <div class="mdui-list-item-content">
+                                            <div class="mdui-list-item-title">${comment.commentContent}</div>
+                                            <div class="mdui-list-item-text mdui-list-item-one-line"> ${comment.user.username}回复于${comment.commentDate}
+                                            </div>
+                                        </div>
+                                    </li>
+                                </a>
+                            </ul>
+                            </c:forEach>
+                        </div>
+                    </div>
+                    <form action="${pageContext.request.contextPath }/comment_add.action" method="post">
+                        <input type="hidden" name="comment.user.uid" value="${user.uid }"/>
+                        <input type="hidden" name="comment.story.story_id" value="${storyshow.story_id }"/>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">说点什么</div>
+                            <div class="panel-body">
+                                <div class="mdui-textfield">
+                                    <textarea class="mdui-textfield-input" name="comment.commentContent"
+                                              placeholder="说点什么"></textarea>
+                                </div>
+                                <button class="mdui-btn mdui-color-blue  mdui-float-right mdui-btn-dense">
+                                    回复
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="mdui-col-xs-12 mdui-col-sm-2"></div>
+            </div>
         </div>
     </div>
-</div>
 </main>
 <%@include file="footer.jsp" %>
 </body>
