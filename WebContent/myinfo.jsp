@@ -26,7 +26,7 @@
                         <div class="mdui-card-header">
                             <img class="mdui-card-header-avatar" src="logo.png"/>
                             <div class="mdui-card-header-title">${user.username}</div>
-                            <div class="mdui-card-header-subtitle">第${user.uid}号会员，加入于2017.06.07</div>
+                            <div class="mdui-card-header-subtitle">第${user.uid}号会员，加入于${user.joindate}</div>
                             <a href="${pageContext.request.contextPath }/user_showUserinfo.action?uid=${user.uid}">
                                 <button class="mdui-btn mdui-btn-dense mdui-color-blue mdui-float-right mdui-m-a-2">
                                     修改资料

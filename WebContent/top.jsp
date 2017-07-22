@@ -11,7 +11,7 @@
                          <c:if test="${sessionScope.user.username != null}">
                        
                         <a  href="${pageContext.request.contextPath }/user_usershow.action?uid=${user.uid}" >${sessionScope.user.username } </a>
-                        <%--<a href="" class="mdui-btn mdui-ripple mdui-ripple-white">退出</a>--%>
+                        <a href="${pageContext.request.contextPath }/user_logout.action" class="mdui-btn mdui-ripple mdui-ripple-white">退出</a>
                          <a href="${pageContext.request.contextPath }/story_toAddPage.action" >发布</a>
                         </c:if>
                         <c:if test="${sessionScope.user.username == null}">
