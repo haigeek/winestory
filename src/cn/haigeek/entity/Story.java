@@ -15,6 +15,21 @@ public class Story {
 	private User user;
 
 	private Set<Comment> setComment=new HashSet<Comment>();
+
+	public Story(Integer story_id, Integer user_id, String story_title, String story_content, String story_type, Date date, User user, Set<Comment> setComment) {
+		this.story_id = story_id;
+		this.user_id = user_id;
+		this.story_title = story_title;
+		this.story_content = story_content;
+		this.story_type = story_type;
+		this.date = date;
+		this.user = user;
+		this.setComment = setComment;
+	}
+	public Story(){
+
+	}
+
 	public User getUser() {
 		return user;
 	}

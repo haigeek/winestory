@@ -28,13 +28,13 @@
                     <div class="mdui-textfield mdui-textfield-floating-label">
                         <i class="mdui-icon material-icons ">&#xe853;</i>
                         <label class="mdui-textfield-label">User name</label>
-                        <input class="mdui-textfield-input" type="text" name="username"/>
+                        <input class="mdui-textfield-input" type="text" name="user.username"/>
                     </div>
 
                     <div class="mdui-textfield mdui-textfield-floating-label">
                         <i class="mdui-icon material-icons">&#xe897;</i>
                         <label class="mdui-textfield-label">Password</label>
-                        <input class="mdui-textfield-input" type="password" name="password"/>
+                        <input class="mdui-textfield-input" type="password" name="user.password"/>
                     </div>
                     <br>
                     <button class="mdui-btn mdui-color-blue mdui-ripple mdui-center" type="submit">登录</button>

@@ -6,27 +6,65 @@ import cn.haigeek.service.StoryService;
 import cn.haigeek.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.*;
 import java.util.Date;
 import java.util.List;
 
-public class UserAction extends ActionSupport implements ModelDriven<User>{
+public class UserAction extends ActionSupport {
 	Date date=new Date();
+	private File avatar;
+	private String avatatFileType;
+	private String avatarFileName;
+	private String savePathAvatar;
 	private StoryService storyService;
 	public void setStoryService(StoryService storyService) {
 		this.storyService = storyService;
 	}
-	//模型驱动
-	private User user=new User();
-	public User getModel() {
+	private User user;
+	public User getUser() {
 		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 	private UserService userService;
 	public void setUserService(UserService userService) {
 		this.userService = userService;
+	}
+
+	public File getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(File avatar) {
+		this.avatar = avatar;
+	}
+
+	public String getAvatatFileType() {
+		return avatatFileType;
+	}
+
+	public void setAvatatFileType(String avatatFileType) {
+		this.avatatFileType = avatatFileType;
+	}
+
+	public String getAvatarFileName() {
+		return avatarFileName;
+	}
+
+	public void setAvatarFileName(String avatarFileName) {
+		this.avatarFileName = avatarFileName;
+	}
+
+	public String getSavePathAvatar() {
+		return savePathAvatar;
+	}
+
+	public void setSavePathAvatar(String savePathAvatar) {
+		this.savePathAvatar = savePathAvatar;
 	}
 
 	//登录的方法
@@ -56,9 +94,13 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	}
 	//显示信息
 	public String usershow(){
+		int uid=user.getUid();
+		//根据id查询
+		User user=userService.findOne(uid);
+		ServletActionContext.getRequest().setAttribute("user", user);
 		//显示story
 		int usid=user.getUid();
-		
+		System.out.print(usid);
 		List<Story> userstory=storyService.findStory(usid);
 		ServletActionContext.getRequest().setAttribute("userstory", userstory);
 		return "usershow";
@@ -72,9 +114,49 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		ServletActionContext.getRequest().setAttribute("user", user);
 		return "showUserinfo";
 	}
-	//修改的方法
+	//修改个人信息的方法
 	public String update() {
-		userService.update(user);
+		int uid=user.getUid();
+		User user2=userService.findOne(uid);
+		user2.setUsername(user.getUsername());
+		user2.setAddress(user.getAddress());
+		user2.setEmail(user.getEmail());
+		user2.setAboutme(user.getAboutme());
+		user2.setWeibo(user.getWeibo());
+		user2.setMusic(user.getMusic());
+		user2.setWebsite(user.getWebsite());
+		userService.update(user2);
+		return "update";
+	}
+	public String updatePassword(){
+		int uid=user.getUid();
+		User user3=userService.findOne(uid);
+		user3.setPassword(user.getPassword());
+		return "update";
+	}
+	//上传头像
+	public String updateavatar(){
+		String path=ServletActionContext.getServletContext().getRealPath("/")+getSavePathAvatar()+"\\"+getAvatarFileName();
+		String path2=getSavePathAvatar()+"/"+getAvatarFileName();
+		try{
+			FileOutputStream fos=new FileOutputStream(path);
+			FileInputStream fis=new FileInputStream(getAvatar());
+			byte[]buffer=new byte[1024];
+			int len=0;
+			try {
+				while ((len=fis.read(buffer))>0){
+					fos.write(buffer,0,len);
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		int uid=user.getUid();
+		User user4=userService.findOne(uid);
+		user4.setAvatar(path2);
+		userService.update(user4);
 		return "update";
 	}
 

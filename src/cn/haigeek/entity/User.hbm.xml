@@ -16,7 +16,7 @@
 		<property name="music" column="music"></property>
 		<property name="website" column="website"></property>
 		<property name="joindate" column="joindate"></property>
-		
+		<property name="avatar" column="avatar"></property>
 		<!-- 表示用户的所有story -->
 		<set name="setStory">
 			<key column="usid"></key>

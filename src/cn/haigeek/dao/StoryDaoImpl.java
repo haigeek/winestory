@@ -25,8 +25,12 @@ public class StoryDaoImpl extends HibernateDaoSupport implements StoryDao {
 	//首页显示文章
 	public List<Story> findindex() {
 		// TODO Auto-generated method stub
-		
-		return (List<Story>) this.getHibernateTemplate().find("from Story");
+        Session session=this.getHibernateTemplate().getSessionFactory().getCurrentSession();
+        String hql="from Story order by story_id desc ";
+        Query query = session.createQuery(hql);//执行查询操作
+        List <Story> StoryList = query.list();
+        return StoryList;
+		//return (List<Story>) this.getHibernateTemplate().find("from Story order by story_id desc ");
 	}
 
 	//根据id查询

@@ -1,20 +1,15 @@
 package cn.haigeek.dao;
 
-import java.util.List;
-
+import cn.haigeek.entity.Story;
+import cn.haigeek.entity.User;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
-import cn.haigeek.entity.Story;
-import cn.haigeek.entity.User;
+import java.util.List;
 
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 	
-//	private HibernateTemplate hibernateTemplate;
-//	public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
-//		this.hibernateTemplate = hibernateTemplate;
-//	}
-//	
+
 	//登录的方法
 	public User loginUser(User user) {
 		// 调用方法得到hibernateTemplate对象
@@ -47,9 +42,9 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		return this.getHibernateTemplate().get(User.class, uid);
 	}
 
-	//修改功能
-	public void update(User user) {
-		this.getHibernateTemplate().update(user);
+	//修改个人信息
+	public void update(User user2) {
+		this.getHibernateTemplate().update(user2);
 		
 	}
 

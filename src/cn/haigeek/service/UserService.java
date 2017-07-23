@@ -1,12 +1,9 @@
 package cn.haigeek.service;
 
-import java.util.List;
-
-import org.springframework.transaction.annotation.Transactional;
-
 import cn.haigeek.dao.UserDao;
 import cn.haigeek.entity.Story;
 import cn.haigeek.entity.User;
+import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class UserService {
 	private UserDao userDao;
@@ -35,8 +32,8 @@ public class UserService {
 		// TODO Auto-generated method stub
 		return userDao.findone(uid);
 	}
-	public void update(User user) {
+	public void update(User user2) {
 		// TODO Auto-generated method stub
-		userDao.update(user);
+		userDao.update(user2);
 	}
 }

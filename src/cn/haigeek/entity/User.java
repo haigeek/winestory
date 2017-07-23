@@ -14,14 +14,32 @@ public class User {
 	private String weibo;
 	private String music;
 	private String website;
+	private String avatar;
 	private Date joindate;
-	
-	
+
 	//表示所有的story
 	private Set<Story> setStory=new HashSet<Story>();
 	private Set<Comment> setComment=new HashSet<Comment>();
-	
-	
+
+	public User(Integer uid, String username, String password, String address, String email, String aboutme, String weibo, String music, String website, String avatar, Date joindate, Set<Story> setStory, Set<Comment> setComment) {
+		this.uid = uid;
+		this.username = username;
+		this.password = password;
+		this.address = address;
+		this.email = email;
+		this.aboutme = aboutme;
+		this.weibo = weibo;
+		this.music = music;
+		this.website = website;
+		this.avatar = avatar;
+		this.joindate = joindate;
+		this.setStory = setStory;
+		this.setComment = setComment;
+	}
+	public User(){
+
+	}
+
 	public Set<Story> getSetStory() {
 		return setStory;
 	}
@@ -81,6 +99,14 @@ public class User {
 	}
 	public void setWebsite(String website) {
 		this.website = website;
+	}
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
 
 	public Date getJoindate() {

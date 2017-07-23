@@ -25,7 +25,7 @@
                 <div class="mdui-col-xs-12 mdui-col-sm-7">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a href="/?tab=all" class="topic-tab current-tab">全部</a>
+                            <a href="${pageContext.request.contextPath }/story_getAllStory.action" class="topic-tab current-tab">全部</a>
 
                             <a href="/?tab=good" class="topic-tab ">故事</a>
 
@@ -38,11 +38,29 @@
                             <a href="/?tab=dev" class="topic-tab "></a>
                         </div>
                         <div class="panel-body">
-                            <c:forEach items="${indexlist }" var="story">
+                            <c:if test="${indexlist.size()<=20}">
+                                <c:forEach items="${indexlist }" var="story">
+                                    <ul class="mdui-list">
+                                        <a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">
+                                            <li class="mdui-list-item mdui-ripple">
+                                                <div class="mdui-list-item-avatar"><img src="${story.user.avatar}"/></div>
+                                                <div class="mdui-list-item-content">
+                                                    <div class="mdui-list-item-title mdui-list-item-two-line">${story.story_title}</div>
+                                                    <div class="mdui-list-item-text mdui-list-item-one-line"> ${story.user.username}发表在说天谈地
+                                                        最后回复：haigeek 2017.06.07
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </a>
+                                    </ul>
+                                </c:forEach>
+                            </c:if>
+                            <c:if test="${indexlist.size()>20}">
+                            <c:forEach items="${indexlist }" var="story" end="20">
                                 <ul class="mdui-list">
                                     <a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">
                                         <li class="mdui-list-item mdui-ripple">
-                                            <div class="mdui-list-item-avatar"><img src="avatar1.jpg"/></div>
+                                            <div class="mdui-list-item-avatar"><img src="${story.user.avatar}"/></div>
                                             <div class="mdui-list-item-content">
                                                 <div class="mdui-list-item-title mdui-list-item-two-line">${story.story_title}</div>
                                                 <div class="mdui-list-item-text mdui-list-item-one-line"> ${story.user.username}发表在说天谈地
@@ -53,6 +71,7 @@
                                     </a>
                                 </ul>
                             </c:forEach>
+                            </c:if>
                         </div>
                     </div>
                 </div>

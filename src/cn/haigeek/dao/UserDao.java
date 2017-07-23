@@ -1,7 +1,5 @@
 package cn.haigeek.dao;
 
-import java.util.List;
-
 import cn.haigeek.entity.Story;
 import cn.haigeek.entity.User;
 
@@ -15,7 +13,7 @@ public interface UserDao {
 
 	User findone(int uid);
 
-	void update(User user);
+	void update(User user2);
 
 	
 	
