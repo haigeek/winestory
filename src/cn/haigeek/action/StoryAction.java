@@ -1,9 +1,11 @@
 package cn.haigeek.action;
 
 import cn.haigeek.entity.Comment;
+import cn.haigeek.entity.InfoType;
 import cn.haigeek.entity.Story;
 import cn.haigeek.entity.pageShow;
 import cn.haigeek.service.CommentService;
+import cn.haigeek.service.InfoTypeService;
 import cn.haigeek.service.StoryService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -30,9 +32,17 @@ public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 	public void setCommentService(CommentService commentService) {
 		this.commentService = commentService;
 	}
+	private InfoTypeService infoTypeService;
+
+	public void setInfoTypeService(InfoTypeService infoTypeService) {
+		this.infoTypeService = infoTypeService;
+	}
 
 	//到发布界面
 	public String toAddPage(){
+		//查询类型
+		List<InfoType>infoTypes=infoTypeService.findAll();
+		ServletActionContext.getRequest().setAttribute("infoTypes",infoTypes);
 		return "toAddPage";
 	}
 	//发布story
@@ -43,6 +53,7 @@ public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 		 * 将uid封装到Story实体里面的user对象之中
 		 */
 		story.setDate(date);
+		story.setCommentcount(0);
 		storyService.add(story);
 		return "add";
 	}
@@ -54,6 +65,7 @@ public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 		ServletActionContext.getRequest().setAttribute("indexlist", indexlist);
 		return "indexlist";
 	}
+
 	//分页
 	private int pageNow=1;
 	private int pageSize=10;

@@ -17,7 +17,9 @@ public class StoryService {
 		// TODO Auto-generated method stub
 		storyDao.add(story);
 	}
-
+	public void addCommentCount(int story_id){
+		storyDao.addCommentCount(story_id);
+	}
 	public List<Story> findall() {
 		// TODO Auto-generated method stub
 		return null;

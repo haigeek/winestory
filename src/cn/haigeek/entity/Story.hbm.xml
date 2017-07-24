@@ -9,8 +9,8 @@
 		</id>
 		<property name="user_id" column="user_id"></property>
 		<property name="story_title" column="story_title"></property>
+		<property name="commentcount" column="commentcount"></property>
 		<property name="story_content" column="story_content"></property>
-		<property name="story_type" column="story_type"></property>
 		<property name="date" column="date"></property>
 
 		<set name="setComment">
@@ -19,5 +19,7 @@
 		</set>
 		<!-- story所属的用户 -->
 		<many-to-one name="user" class="cn.haigeek.entity.User" column="usid"></many-to-one>
+		<!--story所属的类型-->
+		<many-to-one name="infoType" class="cn.haigeek.entity.InfoType" column="story_type"></many-to-one>
 	</class>
 </hibernate-mapping> 

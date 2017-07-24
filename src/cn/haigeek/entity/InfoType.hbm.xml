@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.haigeek.entity.InfoType" table="t_infotype">
+		<id name="typeId" column="typeId">
+			<generator class="native"></generator>
+		</id>
+		<property name="typeName" column="typeName"></property>
+
+		<!-- 表示用户的所有story -->
+		<set name="setStory">
+			<key column="story_type"></key>
+			<one-to-many class="cn.haigeek.entity.Story"/>
+		</set>
+	</class>
+</hibernate-mapping>

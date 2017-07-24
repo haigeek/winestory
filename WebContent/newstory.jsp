@@ -37,25 +37,32 @@
                         <div class="mdui-card-context">
                             <div class="mdui-textfield">
                                 <label class="mdui-textfield-label">标题</label>
-                                <input class="mdui-textfield-input" type="text" maxlength="20" name="story_title" />
+                                <input class="mdui-textfield-input" type="text"  name="story_title" />
                             </div>
 
                                 <label class="mdui-textfield-label">内容</label>
                                 <textarea id="editor" name="story_content" placeholder="Balabala" autofocus></textarea>
                             <br>
+                            <select name="infoType">
+                                <c:forEach items="${infoTypes}" var="type">
+                                    <option value="${type.typeId}">${type.typeName}</option>
+                                </c:forEach>
+                            </select>
                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="true">
                                     选择一个节点
                                     <span class="caret"></span>
                                 </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
+                                <c:forEach items="${infoTypes}" var="type">
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" >
+                                    <li>${type.typeName}</li>
+                                    <%--<li><a href="#">Another action</a></li>--%>
+                                    <%--<li><a href="#">Something else here</a></li>--%>
+                                    <%--<li role="separator" class="divider"></li>--%>
+                                    <%--<li><a href="#">Separated link</a></li>--%>
                                 </ul>
+                                </c:forEach>
                                 <br>
                                 <br>
                             </div>

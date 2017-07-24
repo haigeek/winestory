@@ -24,13 +24,15 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="mdui-card-header">
-                            <img class="mdui-card-header-avatar" src="logo.png"/>
+                            <img class="mdui-card-header-avatar" src="${user.avatar}"/>
                             <div class="mdui-card-header-title">${user.username}</div>
                             <div class="mdui-card-header-subtitle">第${user.uid}号会员，加入于${user.joindate}</div>
                             <a href="${pageContext.request.contextPath }/user_showUserinfo.action?user.uid=${user.uid}">
+                                <c:if test="${user.uid.equals(sessionScope.user.uid)}">
                                 <button class="mdui-btn mdui-btn-dense mdui-color-blue mdui-float-right mdui-m-a-2">
                                     修改资料
                                 </button>
+                                </c:if>
                             </a>
                         </div>
 

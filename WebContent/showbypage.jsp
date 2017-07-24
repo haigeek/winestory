@@ -42,17 +42,16 @@
                         <div class="panel-body">
                             <c:forEach items="${StoryList }" var="story">
                                 <ul class="mdui-list mdui-list-dense">
-                                    <a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">
                                         <li class="mdui-list-item ">
                                             <div class="mdui-list-item-avatar"><img src="${story.user.avatar}"/></div>
                                             <div class="mdui-list-item-content">
-                                                <div class="mdui-list-item-title mdui-list-item-two-line">${story.story_title}</div>
-                                                <div class="mdui-list-item-text mdui-list-item-two-line"> ${story.user.username}在<fmt:formatDate value="${story.date}" pattern='yyyy-MM-dd HH:mm'/> 发表在说天谈地
-                                                    最后回复：haigeek 2017.06.07
+                                                <div class="mdui-list-item-title mdui-list-item-two-line"><a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">${story.story_title}</a></div>
+                                                <div class="mdui-list-item-text mdui-list-item-two-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a> 发表在xxx <fmt:formatDate
+                                                        value="${story.date}" pattern='yyyy-MM-dd HH:mm'/>
                                                 </div>
-                                            </div><span class="badge">${story.commentcount}</span>
+                                            </div>
+                                            <span class="badge">${story.commentcount}</span>
                                         </li>
-                                    </a>
                                 </ul>
                             </c:forEach>
                             <s:set name="page" value="#request.page"></s:set>

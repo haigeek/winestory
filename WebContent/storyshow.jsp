@@ -51,7 +51,7 @@
                             <c:forEach items="${commentshow }" var="comment">
                             <ul class="mdui-list mdui-list-dense">
                                     <li class="mdui-list-item ">
-                                        <div class="mdui-list-item-avatar"><img src="avatar1.jpg"/></div>
+                                        <div class="mdui-list-item-avatar"><img src="${comment.user.avatar}"/></div>
                                         <div class="mdui-list-item-content">
                                             <div class="mdui-list-item-title">${comment.commentContent}</div>
                                             <div class="mdui-list-item-text mdui-list-item-one-line"> ${comment.user.username}回复于${comment.commentDate}
@@ -63,7 +63,7 @@
                             </c:forEach>
                         </div>
                     </div>
-                    <form action="${pageContext.request.contextPath }/comment_add.action" method="post">
+                    <form action="${pageContext.request.contextPath }/comment_add.action?comment.story.storyId=${storyshow.story_id }" method="post">
                         <input type="hidden" name="comment.user.uid" value="${user.uid }"/>
                         <input type="hidden" name="comment.story.story_id" value="${storyshow.story_id }"/>
                         <div class="panel panel-default">

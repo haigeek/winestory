@@ -28,7 +28,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="mdui-card-header">
-                                    <img class="mdui-card-header-avatar" src="logo.png"/>
+                                    <img class="mdui-card-header-avatar" src="${user.avatar}"/>
                                     <div class="mdui-card-header-title">haigeek</div>
                                     <div class="mdui-card-header-subtitle">第1号会员，加入于2017.06.07</div>
                                 </div>
@@ -116,9 +116,9 @@
                                 <div class="mdui-card-header-title">头像上传</div>
                                 <div class="mdui-container">
                                     <br>
-                                    <img src="logo.png" width="150px" height="150px">
-                                    <img src="logo.png" width="100" height="100">
-                                    <img src="logo.png" width="50px" height="50px">
+                                    <img src="${user.avatar}" width="150px" height="150px">
+                                    <img src="${user.avatar}" width="100" height="100">
+                                    <img src="${user.avatar}" width="50px" height="50px">
                                     <br>
                                     <br>
                                     <input type="file" name="avatar">

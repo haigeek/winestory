@@ -2,6 +2,7 @@ package cn.haigeek.action;
 
 import cn.haigeek.entity.Comment;
 import cn.haigeek.service.CommentService;
+import cn.haigeek.service.StoryService;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.Date;
@@ -17,6 +18,11 @@ public class CommentAction extends ActionSupport  {
     public void setCommentService(CommentService commentService) {
         this.commentService = commentService;
     }
+    private StoryService storyService;
+
+    public void setStoryService(StoryService storyService) {
+        this.storyService = storyService;
+    }
 
     public Comment getComment() {
         return comment;
@@ -29,7 +35,8 @@ public class CommentAction extends ActionSupport  {
     public String add(){
         comment.setCommentDate(date);
         commentService.add(comment);
-
+        int story_id=comment.getStory().getStory_id();
+        storyService.addCommentCount(story_id);
         return "add";
     }
 

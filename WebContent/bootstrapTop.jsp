@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <c:if test="${sessionScope.user.username != null}">
-                    <li> <a  href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${user.uid}" >${sessionScope.user.username } </a></li>
+                    <li> <a  href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${sessionScope.user.uid}" >${sessionScope.user.username } </a></li>
                     <li><a href="${pageContext.request.contextPath }/user_logout.action" class="mdui-btn mdui-ripple mdui-ripple-white">退出</a></li>
                     <li><a  href="${pageContext.request.contextPath }/story_toAddPage.action"> 发布</a></li>
                 </c:if>
