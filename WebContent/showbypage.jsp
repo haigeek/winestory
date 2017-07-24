@@ -50,7 +50,7 @@
                                                 <div class="mdui-list-item-text mdui-list-item-two-line"> ${story.user.username}在<fmt:formatDate value="${story.date}" pattern='yyyy-MM-dd HH:mm'/> 发表在说天谈地
                                                     最后回复：haigeek 2017.06.07
                                                 </div>
-                                            </div>
+                                            </div><span class="badge">${story.commentcount}</span>
                                         </li>
                                     </a>
                                 </ul>
