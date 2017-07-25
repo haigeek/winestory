@@ -14,6 +14,7 @@
 	<bean id="storyAction" class="cn.haigeek.action.StoryAction" scope="prototype">
 		<property name="storyService" ref="storyService"></property>
 		<property name="commentService" ref="commentService"></property>
+		<property name="infoTypeService" ref="infoTypeService"></property>
 	</bean>
 	<bean id="storyService" class="cn.haigeek.service.StoryService">
 		<property name="storyDao" ref="storyDaoImpl"></property>
