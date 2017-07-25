@@ -22,6 +22,7 @@
 		<result name="indexlist">/index.jsp</result>
 		<result name="storyshow">/storyshow.jsp</result>
 		<result name="getAllStory">/showbypage.jsp</result>
+		<result name="indexbytype">/indexbytype.jsp</result>
 	</action>
 		<action name="comment_*" class="commentAction" method="{1}">
 			<result name="add" type="redirectAction">story_show?story_id=${comment.story.story_id}</result>

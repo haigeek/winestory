@@ -16,8 +16,9 @@
           href="http://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/story.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>winestory</title>
+    <title>关于winestory</title>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-bottom-nav-fixed">
 <header>
@@ -56,7 +57,7 @@
 
                                 <ul>
                                     <li>登录注册</li>
-                                    <li>发帖（支持富文本）</li>
+                                    <li>发帖（使用markdown编辑器）</li>
                                     <li>评论</li>
                                     <li>设置个人资料</li>
                                     <li>适配移动端</li>

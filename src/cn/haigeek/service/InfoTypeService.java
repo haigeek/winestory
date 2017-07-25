@@ -17,4 +17,5 @@ public class InfoTypeService {
     public List<InfoType> findAll(){
         return infoTypeDao.findAll();
     }
+
 }

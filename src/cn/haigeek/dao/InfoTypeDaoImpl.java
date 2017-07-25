@@ -19,4 +19,5 @@ public class InfoTypeDaoImpl extends HibernateDaoSupport implements InfoTypeDao 
         List <InfoType> InfoTypeList = query.list();
         return InfoTypeList;
     }
+
 }

@@ -46,6 +46,10 @@ public class StoryService {
         return storyDao.findStorySize();
     }
 
+    public List<Story> findbytype(int typeid) {
+		return storyDao.findbytype(typeid);
+    }
+
 //
 
 }

@@ -73,5 +73,10 @@ public class StoryDaoImpl extends HibernateDaoSupport implements StoryDao {
         query.executeUpdate();
     }
 
+    @Override
+    public List<Story> findbytype(int typeid) {
+        return (List<Story>) this.getHibernateTemplate().find("from Story where story_type=?", typeid);
+    }
+
 
 }

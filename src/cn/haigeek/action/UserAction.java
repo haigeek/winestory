@@ -100,7 +100,6 @@ public class UserAction extends ActionSupport {
 		ServletActionContext.getRequest().setAttribute("user", user);
 		//显示story
 		int usid=user.getUid();
-		System.out.print(usid);
 		List<Story> userstory=storyService.findStory(usid);
 		ServletActionContext.getRequest().setAttribute("userstory", userstory);
 		return "usershow";

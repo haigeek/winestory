@@ -65,6 +65,12 @@ public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 		ServletActionContext.getRequest().setAttribute("indexlist", indexlist);
 		return "indexlist";
 	}
+	public String indexbytype(){
+		int typeid=story.getInfoType().getTypeId();
+		List<Story> storyList=storyService.findbytype(typeid);
+		ServletActionContext.getRequest().setAttribute("storyList",storyList);
+		return "indexbytype";
+	}
 
 	//分页
 	private int pageNow=1;

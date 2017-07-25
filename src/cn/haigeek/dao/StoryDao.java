@@ -20,4 +20,6 @@ public interface StoryDao {
     List <Story>getAllStory(int page, int pageSize);
 
     void addCommentCount(int story_id);
+
+    List<Story> findbytype(int typeid);
 }

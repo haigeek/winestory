@@ -26,4 +26,5 @@ public class InfoTypeAction extends ActionSupport {
     public void setInfoTypeService(InfoTypeService infoTypeService) {
         this.infoTypeService = infoTypeService;
     }
+
 }

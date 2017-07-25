@@ -9,4 +9,7 @@ import java.util.List;
  */
 public interface InfoTypeDao {
     List<InfoType> findAll();
+
+
+
 }

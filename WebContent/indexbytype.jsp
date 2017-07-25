@@ -26,7 +26,6 @@
                 <div class="mdui-col-xs-12 mdui-col-sm-7">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-
                             <a href="${pageContext.request.contextPath }/story_indexlist.action" class="topic-tab ">首页</a>
                             <a href="${pageContext.request.contextPath }/story_indexbytype?infoType.typeId=1" class="topic-tab ">故事</a>
 
@@ -39,29 +38,35 @@
                             <a href="${pageContext.request.contextPath }/story_indexbytype?infoType.typeId=5" class="topic-tab ">音乐</a>
                         </div>
                         <div class="panel-body">
-                            <c:if test="${indexlist.size()<=20}">
+                            <c:if test="${storyList.size()<=20}">
                                     <ul class="mdui-list">
-                                        <c:forEach items="${indexlist }" var="story">
-                                        <a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">
+                                        <c:forEach items="${storyList }" var="story">
+
                                             <li class="mdui-list-item ">
                                                 <div class="mdui-list-item-avatar"><img src="${story.user.avatar}"/>
                                                 </div>
                                                 <div class="mdui-list-item-content">
-                                                    <div class="mdui-list-item-title mdui-list-item-two-line">${story.story_title}</div>
-                                                    <div class="mdui-list-item-text mdui-list-item-one-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a>发表在${story.infoType.typeName} ${story.date}
+                                                    <div class="mdui-list-item-title mdui-list-item-two-line">  <a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">${story.story_title} </a></div>
+                                                    <div class="mdui-list-item-text mdui-list-item-one-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a>发表在${story.infoType.typeName} 在${story.date}
                                                     </div>
                                                 </div>
                                                 <span class="badge"> ${story.commentcount}</span>
                                             </li>
-                                        </a>
                                 </c:forEach>
+                                            <li class="mdui-list-item">
+                                                <div class="mdui-list-item-content"> <a href="${pageContext.request.contextPath }/story_getAllStory.action">查看更多</a></div>
+                                            </li>
+
                                     </ul>
+
                             </c:if>
-                            <c:if test="${indexlist.size()>20}">
+                            <c:if test="${storyList.size()>20}">
+
                                     <ul class="mdui-list ">
-                                        <c:forEach items="${indexlist }" var="story" end="20">
+                                        <c:forEach items="${storyList }" var="story" end="20">
                                             <li class="mdui-list-item ">
                                                 <img style=" width:50px;height:50px;border-radius:50%; margin-right: 10px" src="${story.user.avatar}"/>
+
                                                 <div class="mdui-list-item-content">
                                                     <div class="mdui-list-item-title "><a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">${story.story_title}</a></div>
                                                     <div class="mdui-list-item-text mdui-list-item-two-line">
@@ -71,7 +76,7 @@
                                                 </div>
                                                 <span class="badge">${story.commentcount}</span>
                                             </li>
-                                        </c:forEach>
+                                </c:forEach>
                                         <li class="mdui-list-item">
                                             <div class="mdui-list-item-content"> <a href="${pageContext.request.contextPath }/story_getAllStory.action">查看更多</a></div>
                                         </li>

@@ -9,6 +9,7 @@
     <link rel="stylesheet"
           href="http://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/story.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>登录</title>
 </head>

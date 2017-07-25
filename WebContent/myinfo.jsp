@@ -9,8 +9,9 @@
     <link rel="stylesheet"
           href="http://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/story.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>login</title>
+    <title>个人信息</title>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-bottom-nav-fixed">
 <%@include file="bootstrapTop.jsp" %>
@@ -37,10 +38,6 @@
                         </div>
 
                         <div class="mdui-card-context">
-                            <%--<div class="mdui-chip">--%>
-                            <%--<span class="mdui-chip-icon mdui-color-white"><i class="mdui-icon material-icons">&#xe87c;</i></span>--%>
-                            <%--<span class="mdui-chip-title">${userinfo.website }</span>--%>
-                            <%--</div>--%>
                             <br>
                             <br>
                             <div class="mdui-divider">
@@ -51,27 +48,20 @@
                             <p><i class="mdui-icon material-icons">&#xe0be;</i> 联系方式：${user.email}</p>
                             <p><i class="mdui-icon material-icons">&#xe853;</i> weibo：${user.weibo }</p>
                             <p><i class="mdui-icon material-icons">&#xe853;</i> 网易云音乐：${user.music }</p>
-                            <%--<p><i class="mdui-icon material-icons">&#xe8dc;</i> 积分：周周在记着呢</p>--%>
-
-
                         </div>
                     </div>
-
-
                 </div>
                 <br>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="mdui-card-context">
                             <div class="mdui-tab" mdui-tab>
-                                <a href="#example1-tab1" class="mdui-ripple">我的文章</a>
-                                <a href="#example1-tab2" class="mdui-ripple">我创建的主题</a>
-                                <a href="#example1-tab3" class="mdui-ripple">我的回复</a>
+                                <a href="#example1-tab1" class="mdui-ripple">创建的主题</a>
+                                <a href="#example1-tab2" class="mdui-ripple">我的回复</a>
                             </div>
-
                             <div id="example1-tab1" class="mdui-p-a-2">
                                 <c:forEach items="${userstory }" var="story">
-                                    ${story.story_title }
+                                    <a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">${story.story_title}</a>
                                     <br>
                                     <br>
                                 </c:forEach>

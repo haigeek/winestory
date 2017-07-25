@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/story.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>winestory</title>
+    <title>全部-winestory</title>
 </head>
 
 <body class="mdui-appbar-with-toolbar mdui-bottom-nav-fixed">
@@ -27,26 +27,25 @@
                 <div class="mdui-col-xs-12 mdui-col-sm-7">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a href="/?tab=all" class="topic-tab current-tab">全部</a>
+                            <a href="${pageContext.request.contextPath }/story_indexlist.action" class="topic-tab ">首页</a>
+                            <a href="${pageContext.request.contextPath }/story_indexbytype?infoType.typeId=1" class="topic-tab ">故事</a>
 
-                            <a href="/?tab=good" class="topic-tab ">故事</a>
+                            <a href="${pageContext.request.contextPath }/story_indexbytype?infoType.typeId=2" class="topic-tab ">发现</a>
 
-                            <a href="/?tab=share" class="topic-tab ">发现</a>
+                            <a href="${pageContext.request.contextPath }/story_indexbytype?infoType.typeId=3" class="topic-tab ">问与答</a>
 
-                            <a href="/?tab=ask" class="topic-tab ">问与答</a>
+                            <a href="${pageContext.request.contextPath }/story_indexbytype?infoType.typeId=4" class="topic-tab ">生活</a>
 
-                            <a href="/?tab=job" class="topic-tab ">生活</a>
-
-                            <a href="/?tab=dev" class="topic-tab "></a>
+                            <a href="${pageContext.request.contextPath }/story_indexbytype?infoType.typeId=5" class="topic-tab ">音乐</a>
                         </div>
                         <div class="panel-body">
                             <c:forEach items="${StoryList }" var="story">
                                 <ul class="mdui-list mdui-list-dense">
                                         <li class="mdui-list-item ">
-                                            <div class="mdui-list-item-avatar"><img src="${story.user.avatar}"/></div>
+                                            <img style=" width:50px;height:50px;border-radius:50%; margin-right: 10px" src="${story.user.avatar}"/>
                                             <div class="mdui-list-item-content">
                                                 <div class="mdui-list-item-title mdui-list-item-two-line"><a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">${story.story_title}</a></div>
-                                                <div class="mdui-list-item-text mdui-list-item-two-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a> 发表在xxx <fmt:formatDate
+                                                <div class="mdui-list-item-text mdui-list-item-two-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a> 发表在${story.infoType.typeName}<fmt:formatDate
                                                         value="${story.date}" pattern='yyyy-MM-dd HH:mm'/>
                                                 </div>
                                             </div>
@@ -102,17 +101,6 @@
                     </div>
                 </div>
                 <div class="mdui-col-xs-12 mdui-col-sm-2">
-                    <div class="panel panel-default">
-
-                        <div class="panel-body">
-                            <div class="mdui-card-header">
-                                <img class="mdui-card-header-avatar" src="logo.png"/>
-                                <div class="mdui-card-header-title">haigeek</div>
-                                <div class="mdui-card-header-subtitle">第1号会员，加入于2017.06.07</div>
-
-                            </div>
-                        </div>
-                    </div>
                     <br>
                     <div class="panel panel-default">
 

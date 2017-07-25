@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/story.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>winestory</title>
+    <title>winestory的全部帖子</title>
 </head>
 
 <body class="mdui-appbar-with-toolbar mdui-bottom-nav-fixed">
