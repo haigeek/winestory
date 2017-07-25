@@ -24,4 +24,8 @@ public class CommentService {
     public List<Comment> findOne(int storyId) {
         return commentDao.findOne(storyId);
     }
+
+    public List<Comment> findComment(int userId) {
+        return commentDao.findComment(userId);
+    }
 }

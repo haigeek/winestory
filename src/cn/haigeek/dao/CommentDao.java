@@ -11,4 +11,6 @@ public interface CommentDao {
     void add(Comment comment);
 
     List<Comment> findOne(int storyId);
+
+    List<Comment> findComment(int userId);
 }

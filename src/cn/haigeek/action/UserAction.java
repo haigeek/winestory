@@ -1,7 +1,9 @@
 package cn.haigeek.action;
 
+import cn.haigeek.entity.Comment;
 import cn.haigeek.entity.Story;
 import cn.haigeek.entity.User;
+import cn.haigeek.service.CommentService;
 import cn.haigeek.service.StoryService;
 import cn.haigeek.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
@@ -33,6 +35,11 @@ public class UserAction extends ActionSupport {
 	private UserService userService;
 	public void setUserService(UserService userService) {
 		this.userService = userService;
+	}
+	public CommentService commentService;
+
+	public void setCommentService(CommentService commentService) {
+		this.commentService = commentService;
 	}
 
 	public File getAvatar() {
@@ -102,6 +109,11 @@ public class UserAction extends ActionSupport {
 		int usid=user.getUid();
 		List<Story> userstory=storyService.findStory(usid);
 		ServletActionContext.getRequest().setAttribute("userstory", userstory);
+
+		//显示评论
+		int userId=user.getUid();
+		List<Comment>usercomment=commentService.findComment(userId);
+		ServletActionContext.getRequest().setAttribute("usercomment",usercomment);
 		return "usershow";
 	}
 	

@@ -67,7 +67,11 @@
                                 </c:forEach>
                             </div>
                             <div id="example1-tab2" class="mdui-p-a-2"></div>
-                            <div id="example1-tab3" class="mdui-p-a-2"></div>
+                            <c:forEach items="${usercomment }" var="comment">
+                                在<a href="${pageContext.request.contextPath }/story_show.action?story_id=${comment.story.story_id}">${comment.story.story_title}</a>中说道 ${comment.commentContent}
+                                <br>
+                                <br>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>

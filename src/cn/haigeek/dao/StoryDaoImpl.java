@@ -41,7 +41,7 @@ public class StoryDaoImpl extends HibernateDaoSupport implements StoryDao {
 	//根据用户id查询story
 	public List<Story> findStory(int usid) {
 		// TODO Auto-generated method stub
-		return (List<Story>) this.getHibernateTemplate().find("from Story where usid=?", usid);
+		return (List<Story>) this.getHibernateTemplate().find("from Story where usid=? order by story_id desc ", usid);
 	}
 
 
