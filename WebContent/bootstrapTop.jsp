@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@page pageEncoding="UTF-8" %>
+<link rel="icon" href="upload/favicon.ico" type="image/x-icon" />
 <nav class="navbar  main-navbar navbar-inverse navbar-fixed-top" style="background-color: black;">
     <div class="container">
         <div class="navbar-header">

@@ -16,7 +16,7 @@
           href="http://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/story.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="upload/favicon.ico" type="image/x-icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>关于winestory</title>
 </head>
@@ -70,7 +70,7 @@
 
                                 <h4 id="反馈建议和idea"><b>反馈、建议和idea</b></h4>
 
-                                <p>如果你在使用过程中遇到什么问题，或者你有更好的建议和新奇的idea，欢迎<a href="/story_show.action?story_id=1">在这里</a>提交反馈，如果觉得不错，也欢迎留言给我，你们的支持是我努力下去的最大动力。</p>
+                                <p>如果你在使用过程中遇到什么问题，或者你有更好的建议和新奇的idea，欢迎<a href="/winestory/story_show.action?story_id=1">在这里</a>提交反馈，如果觉得不错，也欢迎留言给我，你们的支持是我努力下去的最大动力。</p>
                                 <h4 id=""><b>致谢</b></h4>
 
                                 <p>很多时候我们都是站在巨人的肩膀上，在winestory开发中，有很多需要感谢的地方</p>

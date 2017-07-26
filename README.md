@@ -1,5 +1,5 @@
 # winestory
-struts2，spring，hibernate框架搭建的简易小论坛
+struts2，spring，hibernate框架搭建的简易小论坛 在线访问：http://118.89.24.128:8080/winestory/story_indexlist.action
 ## 服务端
 spring+struts2+hibernate和MySQL
 ## 功能
@@ -13,3 +13,4 @@ spring+struts2+hibernate和MySQL
 - 2017.7.23 完善了个人信息修改的功能
 - 2017.7.24 帖子可显示评论数
 - 2017.7.25 帖子可以按类别显示
+- 2017.7.26 部署在云服务器

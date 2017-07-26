@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="winestory">
+    <output-path>$PROJECT_DIR$/../../../apache-tomcat-7.0.76/webapps</output-path>
+    <root id="archive" name="winestory.war">
+      <element id="artifact" artifact-name="winestory:war exploded" />
+    </root>
+  </artifact>
+</component>

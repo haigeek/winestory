@@ -47,7 +47,7 @@
                                                 <img style=" width:50px;height:50px;border-radius:50%; margin-right: 10px" src="${story.user.avatar}"/>
                                                 <div class="mdui-list-item-content">
                                                     <div class="mdui-list-item-title mdui-list-item-two-line">${story.story_title}</div>
-                                                    <div class="mdui-list-item-text mdui-list-item-one-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a>发表在${story.infoType.typeName} ${story.date}
+                                                    <div class="mdui-list-item-text mdui-list-item-two-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a>发表在${story.infoType.typeName} ${story.date}
                                                     </div>
                                                 </div>
                                                 <span class="badge"> ${story.commentcount}</span>

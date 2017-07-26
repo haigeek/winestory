@@ -8,7 +8,7 @@
         <!-- 数据库使用的方言 （可选） -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <!-- 设置 打印输出 sql 语句 为真 -->
-        <property name="show_sql">true</property>
+        <property name="show_sql">false</property>
         <!-- 设置格式为 sql -->
         <property name="format_sql">true</property>
         <!-- 第一次加载 hibernate 时根据实体类自动建立表结构，以后自动更新表结构 -->

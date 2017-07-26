@@ -12,7 +12,7 @@
 		<result name="registersuccess">/tologin.jsp</result>
 		<result name="usershow">/myinfo.jsp</result>
 		<result name="showUserinfo">/myinfoedit.jsp</result>
-		<param name="savePathAvatar">/upload/avatar</param>
+		<param name="savePathAvatar">/upload/avatar/</param>
 		<result name="update" type="redirectAction">user_usershow?user.uid=${user.uid}</result>
         <!--<result name="updateavatar" type="redirectAction">user_usershow?user.uid=${user.uid}</result>-->
 	</action>

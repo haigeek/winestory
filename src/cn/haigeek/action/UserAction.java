@@ -148,8 +148,10 @@ public class UserAction extends ActionSupport {
 	}
 	//上传头像
 	public String updateavatar(){
-		String path=ServletActionContext.getServletContext().getRealPath("/")+getSavePathAvatar()+"\\"+getAvatarFileName();
-		String path2=getSavePathAvatar()+"/"+getAvatarFileName();
+		String path=ServletActionContext.getServletContext().getRealPath("/")+getSavePathAvatar()+"/"+getAvatarFileName();
+//		String path=this.getClass().getClassLoader().getResource("upload/avatar").getPath()+"\\"+getAvatarFileName();
+//		String path=ServletActionContext.getRequest().getSession().getResource("/upload/avatar")+"\\"+getAvatarFileName();
+		String path2="/winestory"+getSavePathAvatar()+"/"+getAvatarFileName();
 		try{
 			FileOutputStream fos=new FileOutputStream(path);
 			FileInputStream fis=new FileInputStream(getAvatar());

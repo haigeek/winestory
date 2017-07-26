@@ -47,7 +47,7 @@
                                                 </div>
                                                 <div class="mdui-list-item-content">
                                                     <div class="mdui-list-item-title mdui-list-item-two-line">  <a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">${story.story_title} </a></div>
-                                                    <div class="mdui-list-item-text mdui-list-item-one-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a>发表在${story.infoType.typeName} 在${story.date}
+                                                    <div class="mdui-list-item-text mdui-list-item-two-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a>发表在${story.infoType.typeName} 在${story.date}
                                                     </div>
                                                 </div>
                                                 <span class="badge"> ${story.commentcount}</span>
