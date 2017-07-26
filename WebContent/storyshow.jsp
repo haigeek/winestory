@@ -48,13 +48,16 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">评论</div>
                         <div class="panel-body">
+                            <c:if test="${commentshow.size()==0}">
+                                <div class=" alert " role="alert">还没有评论哦 (●ˇ∀ˇ●)，快抢沙发！理性发言，互联网时代，要自由，更要遵守秩序！！！</div>
+                            </c:if>
                             <c:forEach items="${commentshow }" var="comment">
                             <ul class="mdui-list mdui-list-dense">
                                     <li class="mdui-list-item ">
                                        <img style=" width:50px;height:50px;border-radius:50%; margin-right: 10px" src="${comment.user.avatar}"/>
                                         <div class="mdui-list-item-content">
                                             <div class="mdui-list-item-title">${comment.commentContent}</div>
-                                            <div class="mdui-list-item-text mdui-list-item-one-line"> ${comment.user.username}回复于${comment.commentDate}
+                                            <div class="mdui-list-item-text mdui-list-item-one-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${comment.user.uid}">${comment.user.username}</a>回复于${comment.commentDate}
                                             </div>
                                         </div>
                                     </li>

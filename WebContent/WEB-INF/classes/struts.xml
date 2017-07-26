@@ -7,9 +7,9 @@
 	<action name="user_*" class="userAction" method="{1}">
 		<!-- <result name="loginsuccess">/index.jsp</result> -->
 		<result name="loginsuccess" type="redirectAction">story_indexlist</result>
-		<result name="login">/login.jsp</result>
+		<result name="loginfail">/loginfail.jsp</result>
         <result name="logout" type="redirectAction">story_indexlist</result>
-		<result name="registersuccess">/login.jsp</result>
+		<result name="registersuccess">/tologin.jsp</result>
 		<result name="usershow">/myinfo.jsp</result>
 		<result name="showUserinfo">/myinfoedit.jsp</result>
 		<param name="savePathAvatar">/upload/avatar</param>

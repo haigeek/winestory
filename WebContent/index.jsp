@@ -44,8 +44,7 @@
                                         <c:forEach items="${indexlist }" var="story">
                                         <a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">
                                             <li class="mdui-list-item ">
-                                                <div class="mdui-list-item-avatar"><img src="${story.user.avatar}"/>
-                                                </div>
+                                                <img style=" width:50px;height:50px;border-radius:50%; margin-right: 10px" src="${story.user.avatar}"/>
                                                 <div class="mdui-list-item-content">
                                                     <div class="mdui-list-item-title mdui-list-item-two-line">${story.story_title}</div>
                                                     <div class="mdui-list-item-text mdui-list-item-one-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a>发表在${story.infoType.typeName} ${story.date}
@@ -55,6 +54,9 @@
                                             </li>
                                         </a>
                                 </c:forEach>
+                                        <li class="mdui-list-item">
+                                            <div class="mdui-list-item-content"> <a href="${pageContext.request.contextPath }/story_getAllStory.action">查看更多</a></div>
+                                        </li>
                                     </ul>
                             </c:if>
                             <c:if test="${indexlist.size()>20}">

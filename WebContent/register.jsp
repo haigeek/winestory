@@ -33,7 +33,7 @@
     </div>
 </div>
 <div class="mdui-container-fluid">
-    <form action="${pageContext.request.contextPath }/user_register.action" method="post">
+    <form id="registerForm" action="${pageContext.request.contextPath }/user_register.action" method="post">
         <br> <br> <br> <br>
         <div class="mdui-col-xs-12 mdui-col-sm-3"></div>
         <div class="mdui-col-xs-12 mdui-col-sm-5">
@@ -42,35 +42,110 @@
                 <div class="mdui-textfield mdui-textfield-floating-label">
                     <i class="mdui-icon material-icons ">&#xe853;</i>
                     <label class="mdui-textfield-label">User name</label>
-                    <input class="mdui-textfield-input" type="text" name="user.username"/>
+                    <input id="username" class="mdui-textfield-input" type="text" name="user.username"/>
                 </div>
                 <!-- 固定标签 -->
                 <div class="mdui-textfield mdui-textfield-floating-label">
                     <i class="mdui-icon material-icons">&#xe0be;</i>
                     <label class="mdui-textfield-label">Email</label>
-                    <input class="mdui-textfield-input" type="text" name="user.email"/>
+                    <input id="useremail" class="mdui-textfield-input" type="text" name="user.email"/>
                 </div>
 
                 <!-- 浮动标签、多行文本框 -->
                 <div class="mdui-textfield mdui-textfield-floating-label">
                     <i class="mdui-icon material-icons">&#xe897;</i>
                     <label class="mdui-textfield-label">Password</label>
-                    <input class="mdui-textfield-input " type="password" name="user.password"/>
+                    <input id="userpassword" class="mdui-textfield-input " type="password" name="user.password"/>
                 </div>
                 <br>
-                <button class="mdui-btn mdui-color-blue mdui-ripple mdui-center" type="submit">注册</button>
+                <button  type="button" onclick="register()" class="mdui-btn mdui-color-blue mdui-ripple mdui-center" >注册</button>
                 <a href="" class="mdui-float-right">已有账号，点我登录</a>
             </div>
         </div>
 
         <div class="mdui-col-xs-12 mdui-col-sm-4">
         </div>
-
-        <script
-                src="http://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/js/mdui.min.js"></script>
     </form>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/js/mdui.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </div>
 <%@include file="footer.jsp" %>
 </body>
 </main>
+<script>
+    function register() {
+        var username = document.getElementById("username").value;
+        if(username==""){
+            $('#pleaseinputname').modal('toggle');
+            return false;
+        }
+        var useremail = document.getElementById("useremail").value;
+        if(useremail == ""){
+            $('#pleaseinputemail').modal('toggle');
+            return false;
+        }
+        var userpassword = document.getElementById("userpassword").value;
+        if(userpassword == ""){
+            $('#pleaseinputpassword').modal('toggle');
+            return false;
+        }
+        document.getElementById("registerForm").submit();
+    }
+</script>
+<%--Dialogs--%>
+<div id="pleaseinputname" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-title">
+                <h1 class="text-center">抱歉😥
+                </h1>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">用户名不能为空</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="pleaseinputemail" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-title">
+                <h1 class="text-center">抱歉😥
+                </h1>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">邮箱不能为空</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="pleaseinputpassword" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-title">
+                <h1 class="text-center">抱歉😥
+                </h1>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">密码不能为空</h4>
+            </div>
+        </div>
+    </div>
+</div>
 </html>

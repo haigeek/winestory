@@ -13,19 +13,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>修改资料</title>
 </head>
-<body class="mdui-appbar-with-toolbar mdui-bottom-nav-fixed mdui-theme-accent-blue"
-">
+<body class="mdui-appbar-with-toolbar mdui-bottom-nav-fixed mdui-theme-accent-blue">
 <%@include file="bootstrapTop.jsp" %>
 <br>
 <main>
+    <c:if test="${sessionScope.user.uid == user.uid}">
     <div class="mdui-container-fluid">
         <div class="mdui-class">
             <div class="mdui-row">
                 <div class="mdui-col-xs-4 mdui-col-sm-2"></div>
                 <div class="mdui-col-xs-12 mdui-col-sm-6">
-                    <form action="${pageContext.request.contextPath }/user_update.action?user.usid=${user.uid}"
+                    <form action="${pageContext.request.contextPath }/user_update.action?user.uid=${user.uid}"
                           method=post>
-                        <input type="hidden" name="user.uid" value="${user.uid }"/>
+                        <%--<input type="hidden" name="user.uid" value="${user.uid }"/>--%>
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="mdui-card-header">
@@ -85,32 +85,35 @@
                         </div>
                     </form>
                     <br>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <br>
-                            <div class="mdui-card-header-title">更改密码</div>
-                            <div class="mdui-container">
-                                <div class="mdui-textfield">
-                                    <i class="mdui-icon material-icons">&#xe897;</i>
-                                    <label class="mdui-textfield-label">new password</label>
-                                    <input class="mdui-textfield-input" type="text"/>
-                                </div>
-                                <div class="mdui-textfield">
-                                    <i class="mdui-icon material-icons">&#xe897;</i>
-                                    <label class="mdui-textfield-label">confirm</label>
-                                    <input class="mdui-textfield-input" type="text"/>
+                    <form id="changepasswordForm"
+                          action="${pageContext.request.contextPath }/user_updatePassword.action?user.uid=${user.uid}" method="post">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="mdui-card-header-title">更改密码</div>
+                                <div class="mdui-container">
+                                    <div class="mdui-textfield">
+                                        <i class="mdui-icon material-icons">&#xe897;</i>
+                                        <label class="mdui-textfield-label">new password</label>
+                                        <input id="newpassword" class="mdui-textfield-input" type="password"/>
+                                    </div>
+                                    <div class="mdui-textfield">
+                                        <i class="mdui-icon material-icons">&#xe897;</i>
+                                        <label class="mdui-textfield-label">confirm</label>
+                                        <input id="confirmpassword" class="mdui-textfield-input" type="password" name="user.password"/>
+                                    </div>
+                                    <button onclick="changepassword()" type="button"
+                                            class="mdui-btn mdui-btn-dense mdui-color-blue mdui-float-right mdui-m-a-2">
+                                        保存
+                                    </button>
                                 </div>
 
-                                <button class="mdui-btn mdui-btn-dense mdui-color-blue mdui-float-right mdui-m-a-2"
-                                        type="submit">保存
-                                </button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     <br>
-                    <form action="${pageContext.request.contextPath }/user_updateavatar.action?user.usid=${user.uid}"
+                    <form action="${pageContext.request.contextPath }/user_updateavatar.action?user.uid=${user.uid}"
                           method=post enctype="multipart/form-data">
-                        <input type="hidden" name="user.uid" value="${user.uid }"/>
+                        <%--<input type="hidden" name="user.uid" value="${user.uid }"/>--%>
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <br>
@@ -131,10 +134,7 @@
                         </div>
                     </form>
                     <br>
-                    <div class="mdui-divider"></div>
                 </div>
-
-
                 <div class="mdui-col-xs-12 mdui-col-sm-3">
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -144,14 +144,47 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-    </div>
+    </c:if>
 </main>
+<p align="center">别人的隐私你改不了哈哈</p>
 <%@include file="footer.jsp" %>
 </body>
-
+<%@include file="footer.jsp" %>
+</body>
+</main>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/js/mdui.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    function changepassword() {
+        var newpassword = document.getElementById("newpassword").value;
+        var confirmpassword = document.getElementById("confirmpassword").value;
+        if (newpassword != confirmpassword) {
+            $('#pleaseinputsame').modal('toggle');
+            return false;
+        }
+        document.getElementById("changepasswordForm").submit();
+    }
+</script>
+<%--Dialogs--%>
+<div id="pleaseinputsame" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-title">
+                <h1 class="text-center">抱歉😥
+                </h1>
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center;">两次输入不一致，请检查</h4>
+            </div>
+        </div>
+    </div>
+</div>
 </html>

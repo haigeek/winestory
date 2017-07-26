@@ -25,11 +25,12 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="mdui-card-header">
-                            <img class="mdui-card-header-avatar" src="${user.avatar}"/>
+                            <img class="mdui-card-header-avatar" style=" width:60px;height:60px;border-radius:50%; margin-right: 10px" src="${user.avatar}"/>
                             <div class="mdui-card-header-title">${user.username}</div>
                             <div class="mdui-card-header-subtitle">第${user.uid}号会员，加入于${user.joindate}</div>
                             <a href="${pageContext.request.contextPath }/user_showUserinfo.action?user.uid=${user.uid}">
                                 <c:if test="${user.uid.equals(sessionScope.user.uid)}">
+
                                 <button class="mdui-btn mdui-btn-dense mdui-color-blue mdui-float-right mdui-m-a-2">
                                     修改资料
                                 </button>
@@ -57,7 +58,7 @@
                         <div class="mdui-card-context">
                             <div class="mdui-tab" mdui-tab>
                                 <a href="#example1-tab1" class="mdui-ripple">创建的主题</a>
-                                <a href="#example1-tab2" class="mdui-ripple">我的回复</a>
+                                <a href="#example1-tab2" class="mdui-ripple">回复</a>
                             </div>
                             <div id="example1-tab1" class="mdui-p-a-2">
                                 <c:forEach items="${userstory }" var="story">

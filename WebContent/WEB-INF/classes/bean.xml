@@ -36,6 +36,7 @@
 	<bean id="userAction" class="cn.haigeek.action.UserAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 		<property name="storyService" ref="storyService"></property>
+		<property name="commentService" ref="commentService"></property>
 	</bean>
 	<bean id="userService" class="cn.haigeek.service.UserService">
 		<property name="userDao" ref="userDaoImpl"></property>

@@ -37,7 +37,7 @@
                         <div class="panel-body">
                             <div class="mdui-card-content">
                                 <h4 id="什么是winestory"><b>什么是winestory</b></h4>
-
+                                <image height="200px" width="200px" src="http://wx4.sinaimg.cn/mw690/d1843df9gy1fhx7tu8lxbj20e80e8t93.jpg"></image>
                                 <p>winestory是一个有温度的故事社区，取名为winestory，wine为酒，而发音为温，也有一番我有故事，你有酒吗的味道。</p>
 
                                 <h4 id="这里可以做什么"><b>这里可以做什么</b></h4>
@@ -70,7 +70,17 @@
 
                                 <h4 id="反馈建议和idea"><b>反馈、建议和idea</b></h4>
 
-                                <p>如果你在使用过程中遇到什么问题，或者你有更好的建议和新奇的idea，欢迎提交反馈，如果觉得不错，也欢迎留言给我，你们的支持是我努力下去的最大动力。</p>
+                                <p>如果你在使用过程中遇到什么问题，或者你有更好的建议和新奇的idea，欢迎<a href="/story_show.action?story_id=1">在这里</a>提交反馈，如果觉得不错，也欢迎留言给我，你们的支持是我努力下去的最大动力。</p>
+                                <h4 id=""><b>致谢</b></h4>
+
+                                <p>很多时候我们都是站在巨人的肩膀上，在winestory开发中，有很多需要感谢的地方</p>
+
+                                <ul>
+                                    <li>网站前台样式，基于<a href="http://v3.bootcss.com/" target="_blank">Bootstrap</a>和<a href="https://www.mdui.org/" target="_blank">MDUI</a></li>
+                                    <li><a href="https://github.com/laobubu/MarkdownIME" target="_blank">MarkdownIME</a>markdown编辑器,很geek</li>
+                                    <li>最喜欢的论坛<a href="https://www.v2ex.com" target="_blank">V2EX</a>的部分设计</li>
+                                    <li>部分样式借鉴了好友<a href="http://www.xtlog.com/" target="_blank">xt</a>的<a href="http://120.24.92.198:8080/rant/home.action" target="_blank">Rant</a>的样式，也是在他的建议下坚持开发</li>
+                                </ul>
                             </div>
 
                         </div>

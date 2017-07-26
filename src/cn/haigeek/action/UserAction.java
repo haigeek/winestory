@@ -84,7 +84,7 @@ public class UserAction extends ActionSupport {
 			request.getSession().setAttribute("user", userExist);
 			return "loginsuccess";
 		}else{
-			return "login";
+			return "loginfail";
 		}	
 	}
 	//注销的方法
@@ -143,6 +143,7 @@ public class UserAction extends ActionSupport {
 		int uid=user.getUid();
 		User user3=userService.findOne(uid);
 		user3.setPassword(user.getPassword());
+		userService.update(user3);
 		return "update";
 	}
 	//上传头像

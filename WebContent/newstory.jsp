@@ -23,7 +23,7 @@
             <div class="mdui-class">
                 <div class="mdui-row">
                     <div class="mdui-col-xs-12 mdui-col-sm-2"></div>
-                    <div class="mdui-col-xs-12 mdui-col-sm-8">
+                    <div class="mdui-col-xs-12 mdui-col-sm-7">
                         <div class="mdui-card-header">
                             <img class="mdui-card-header-avatar" src="${sessionScope.user.avatar}"/>
                             <div class="mdui-card-header-title">发表新的主题</div>
@@ -55,6 +55,20 @@
                                 <br>
                             </div>
                             <button type="button" onclick="addstory()" class="mdui-btn mdui-btn-dense mdui-color-black  mdui-float-right mdui-m-a-2">发布</button>
+                        </div>
+                    </div>
+                    <div class="mdui-col-xs-12 mdui-col-sm-2">
+                        <br>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <ul>
+                                    <h3 >tips</h3>
+                               <li>发帖注意不要为空，内容可以为空</li>
+                                <li>文本编辑器是一个很好玩的东西，但你可能需要了解一下这份<a href="http://blog.leanote.com/post/freewalk/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C" target="_blank">markdown语法指南</a></li>
+                                <li>这是一个输入后自动转化的编辑器，按照markdown的语法输入后，会自动转化为你熟悉的格式</li>
+                                <li>当然可以正常输入，不过没有什么格式，上述适合需要排版的长文章</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
