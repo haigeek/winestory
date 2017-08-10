@@ -11,6 +11,7 @@
           href="http://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/story.css">
+    <link rel="icon" href="upload/favicon.ico" type="image/x-icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>${storyshow.story_title}-winestory</title>
 </head>
@@ -57,7 +58,7 @@
                                        <img style=" width:50px;height:50px;border-radius:50%; margin-right: 10px" src="${comment.user.avatar}"/>
                                         <div class="mdui-list-item-content">
                                             <div class="mdui-list-item-title">${comment.commentContent}</div>
-                                            <div class="mdui-list-item-text mdui-list-item-one-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${comment.user.uid}">${comment.user.username}</a>回复于${comment.commentDate}
+                                            <div class="mdui-list-item-text mdui-list-item-two-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${comment.user.uid}">${comment.user.username}</a>回复于${comment.commentDate}
                                             </div>
                                         </div>
                                     </li>

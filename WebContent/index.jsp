@@ -11,6 +11,7 @@
           href="http://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/story.css">
+    <link rel="icon" href="upload/favicon.ico" type="image/x-icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>winestory</title>
 </head>
@@ -43,10 +44,10 @@
                                     <ul class="mdui-list">
                                         <c:forEach items="${indexlist }" var="story">
                                         <a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">
-                                            <li class="mdui-list-item ">
+                                            <li class="mdui-list-item mdui-ripple">
                                                 <img style=" width:50px;height:50px;border-radius:50%; margin-right: 10px" src="${story.user.avatar}"/>
                                                 <div class="mdui-list-item-content">
-                                                    <div class="mdui-list-item-title mdui-list-item-two-line">${story.story_title}</div>
+                                                    <div class="mdui-list-item-title ">${story.story_title}</div>
                                                     <div class="mdui-list-item-text mdui-list-item-two-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a>发表在${story.infoType.typeName} ${story.date}
                                                     </div>
                                                 </div>
@@ -60,7 +61,7 @@
                                     </ul>
                             </c:if>
                             <c:if test="${indexlist.size()>20}">
-                                    <ul class="mdui-list ">
+                                    <ul class="mdui-list mdui-ripple">
                                         <c:forEach items="${indexlist }" var="story" end="20">
                                             <li class="mdui-list-item ">
                                                 <img style=" width:50px;height:50px;border-radius:50%; margin-right: 10px" src="${story.user.avatar}"/>
@@ -74,7 +75,7 @@
                                                 <span class="badge">${story.commentcount}</span>
                                             </li>
                                         </c:forEach>
-                                        <li class="mdui-list-item">
+                                        <li class="mdui-list-item mdui-ripple">
                                             <div class="mdui-list-item-content"> <a href="${pageContext.request.contextPath }/story_getAllStory.action">查看更多</a></div>
                                         </li>
                                     </ul>
@@ -88,9 +89,9 @@
                     <div class="panel panel-default">
 
                         <div class="panel-body">
-                            winestory是一个有温度的故事社区
-                            <br> 在这里，你可以相信这里的小伙伴
-                            <br> 我们可以很认真的分享
+                            <p >winestory是一个有温度的故事社区
+                                在这里，你可以相信这里的小伙伴
+                                我们可以很认真的分享</p>
                         </div>
                     </div>
                 </div>

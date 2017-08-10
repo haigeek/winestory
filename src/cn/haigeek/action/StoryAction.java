@@ -47,11 +47,6 @@ public class StoryAction extends ActionSupport implements ModelDriven<Story>{
 	}
 	//发布story
 	public String add(){
-		/*
-		 * 模型驱动可以封装story的基本信息
-		 * uid是客户的id是不能直接封装的
-		 * 将uid封装到Story实体里面的user对象之中
-		 */
 		story.setDate(date);
 		story.setCommentcount(0);
 		storyService.add(story);

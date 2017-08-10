@@ -40,11 +40,11 @@
                         </div>
                         <div class="panel-body">
                             <c:forEach items="${StoryList }" var="story">
-                                <ul class="mdui-list mdui-list-dense">
+                                <ul class="mdui-list mdui-list-dense mdui-ripple">
                                         <li class="mdui-list-item ">
                                             <img style=" width:50px;height:50px;border-radius:50%; margin-right: 10px" src="${story.user.avatar}"/>
                                             <div class="mdui-list-item-content">
-                                                <div class="mdui-list-item-title mdui-list-item-two-line"><a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">${story.story_title}</a></div>
+                                                <div class="mdui-list-item-title "><a href="${pageContext.request.contextPath }/story_show.action?story_id=${story.story_id}">${story.story_title}</a></div>
                                                 <div class="mdui-list-item-text mdui-list-item-two-line"> <a href="${pageContext.request.contextPath }/user_usershow.action?user.uid=${story.user.uid}">${story.user.username}</a> 发表在${story.infoType.typeName}<fmt:formatDate
                                                         value="${story.date}" pattern='yyyy-MM-dd HH:mm'/>
                                                 </div>
@@ -105,9 +105,9 @@
                     <div class="panel panel-default">
 
                         <div class="panel-body">
-                            winestory是一个有温度的故事社区
-                            <br> 在这里，你可以相信这里的小伙伴
-                            <br> 我们可以很认真的分享
+                           <p>winestory是一个有温度的故事社区
+                               在这里，你可以相信这里的小伙伴
+                               我们可以很认真的分享</p>
                         </div>
                     </div>
                 </div>
